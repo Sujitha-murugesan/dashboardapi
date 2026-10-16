@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- @include head -->
+  <title>Products – Northwind Admin</title>
+</head>
+<body>
+  <!-- @include header -->
+  <div class="layout">
+    <!-- @include sidebar -->
+    <main id="main-content" tabindex="-1">
+      <h1>Products</h1>
+      <noscript><p class="notice-inline">JavaScript is required to load the product catalogue.</p></noscript>
+      <div id="banner" class="banner" role="alert" hidden></div>
+
+      <div class="shop-layout">
+        <section class="shop-main" aria-labelledby="catalog-heading">
+          <h2 id="catalog-heading">Catalogue</h2>
+
+          <div class="toolbar">
+            <div class="field">
+              <label for="product-search">Search products</label>
+              <input id="product-search" type="search" autocomplete="off" placeholder="Try &quot;jacket&quot; or &quot;ssd&quot;">
+            </div>
+            <div class="field">
+              <label for="product-sort">Sort by</label>
+              <select id="product-sort">
+                <option value="relevance">Featured</option>
+                <option value="price-asc">Price: low to high</option>
+                <option value="price-desc">Price: high to low</option>
+                <option value="rating-desc">Top rated</option>
+                <option value="name-asc">Name: A to Z</option>
+              </select>
+            </div>
+          </div>
+
+          <p id="category-label" class="toolbar-label">Category</p>
+          <div id="category-tabs" class="tabs" role="group" aria-labelledby="category-label">
+            <button type="button" data-category="all" aria-pressed="true">All</button>
+          </div>
+
+          <p id="results-status" class="results-status" role="status">Loading products…</p>
+          <div id="product-region" aria-busy="true"></div>
+        </section>
+
+        <aside id="cart" class="cart" aria-labelledby="cart-heading">
+          <h2 id="cart-heading" tabindex="-1">Your cart</h2>
+          <div id="cart-body"></div>
+          <p id="cart-status" class="visually-hidden" role="status"></p>
+        </aside>
+      </div>
+    </main>
+  </div>
+  <!-- @include footer -->
+  <script src="js/app.js"></script>
+  <script type="module" src="js/shop.js"></script>
+</body>
+</html>

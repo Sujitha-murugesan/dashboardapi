@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- @include head -->
+  <title>Overview – Northwind Admin</title>
+</head>
+<body>
+  <!-- @include header -->
+  <div class="layout">
+    <!-- @include sidebar -->
+    <main id="main-content" tabindex="-1">
+      <h1>Overview</h1>
+
+      <div class="dashboard-grid">
+        <section class="area-kpi" aria-labelledby="kpi-heading">
+          <h2 id="kpi-heading">Key metrics</h2>
+          <div class="card-grid">
+            <article class="card" aria-labelledby="kpi-users">
+              <h3 id="kpi-users">Active users</h3>
+              <p class="metric">1,284</p>
+              <p class="muted">Up 4% from last week</p>
+            </article>
+            <article class="card" aria-labelledby="kpi-orders">
+              <h3 id="kpi-orders">Open orders</h3>
+              <p class="metric">342</p>
+              <p class="muted">12 awaiting approval</p>
+            </article>
+            <article class="card" aria-labelledby="kpi-uptime">
+              <h3 id="kpi-uptime">Service uptime</h3>
+              <p class="metric">99.97%</p>
+              <p class="muted">Last 30 days</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="area-activity" aria-labelledby="activity-heading">
+          <h2 id="activity-heading">Recent activity</h2>
+          <div class="table-wrap">
+            <table class="table-stack">
+              <caption>Latest system events, newest first</caption>
+              <thead>
+                <tr>
+                  <th scope="col">Time</th>
+                  <th scope="col">Event</th>
+                  <th scope="col">Actor</th>
+                  <th scope="col">Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td data-label="Time"><time datetime="2026-10-16T09:12">09:12</time></td><td data-label="Event">Invoice #4021 approved</td><td data-label="Actor">Priya N.</td><td data-label="Status">Success</td></tr>
+                <tr><td data-label="Time"><time datetime="2026-10-16T08:47">08:47</time></td><td data-label="Event">New user invited</td><td data-label="Actor">Arun K.</td><td data-label="Status">Pending</td></tr>
+                <tr><td data-label="Time"><time datetime="2026-10-16T08:05">08:05</time></td><td data-label="Event">Backup completed</td><td data-label="Actor">System</td><td data-label="Status">Success</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section class="area-traffic" aria-labelledby="traffic-heading">
+          <h2 id="traffic-heading">Traffic by channel</h2>
+          <div class="card">
+            <ul class="meter-list">
+              <li><label for="m-search">Search</label><meter id="m-search" min="0" max="100" value="62">62%</meter></li>
+              <li><label for="m-direct">Direct</label><meter id="m-direct" min="0" max="100" value="24">24%</meter></li>
+              <li><label for="m-social">Social</label><meter id="m-social" min="0" max="100" value="14">14%</meter></li>
+            </ul>
+          </div>
+        </section>
+
+        <aside class="area-notice notice" aria-labelledby="notice-heading">
+          <h2 id="notice-heading">Maintenance notice</h2>
+          <p>Scheduled maintenance on <time datetime="2026-10-20">20 October 2026</time>, 01:00–02:00 UTC.</p>
+        </aside>
+      </div>
+    </main>
+  </div>
+  <!-- @include footer -->
+  <script src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- @include head -->
+  <title>Settings – Northwind Admin</title>
+</head>
+<body>
+  <!-- @include header -->
+  <div class="layout">
+    <!-- @include sidebar -->
+    <main id="main-content" tabindex="-1">
+      <h1>Settings</h1>
+      <p>Fields marked <span aria-hidden="true">*</span><span class="visually-hidden">with an asterisk</span> are required.</p>
+
+      <div id="form-summary" class="error-summary" role="alert" tabindex="-1" hidden></div>
+
+      <form id="settings-form" class="validate" action="settings.html" method="get" novalidate>
+        <fieldset>
+          <legend>Profile</legend>
+          <div class="field">
+            <label for="full-name">Full name <span class="required" aria-hidden="true">*</span></label>
+            <input id="full-name" name="full_name" type="text" required minlength="2" maxlength="60" autocomplete="name" aria-describedby="full-name-err">
+            <p class="error" id="full-name-err" hidden></p>
+          </div>
+          <div class="field">
+            <label for="work-email">Work email <span class="required" aria-hidden="true">*</span></label>
+            <input id="work-email" name="email" type="email" required autocomplete="email" aria-describedby="work-email-hint work-email-err">
+            <p class="hint" id="work-email-hint">Used for sign-in and notifications.</p>
+            <p class="error" id="work-email-err" hidden></p>
+          </div>
+          <div class="field">
+            <label for="phone">Phone number</label>
+            <input id="phone" name="phone" type="tel" pattern="[0-9+\- ]{7,15}" autocomplete="tel" aria-describedby="phone-hint phone-err">
+            <p class="hint" id="phone-hint">Digits, spaces, plus and hyphen only (7 to 15 characters).</p>
+            <p class="error" id="phone-err" hidden></p>
+          </div>
+          <div class="field">
+            <label for="start-date">Start date</label>
+            <input id="start-date" name="start_date" type="date" min="2000-01-01" max="2030-12-31">
+          </div>
+          <div class="field">
+            <label for="department">Department <span class="required" aria-hidden="true">*</span></label>
+            <select id="department" name="department" required aria-describedby="department-err">
+              <option value="">Select a department</option>
+              <option value="eng">Engineering</option>
+              <option value="ops">Operations</option>
+              <option value="fin">Finance</option>
+            </select>
+            <p class="error" id="department-err" hidden></p>
+          </div>
+          <div class="field">
+            <label for="bio">Short bio</label>
+            <textarea id="bio" name="bio" rows="4" maxlength="300" aria-describedby="bio-hint"></textarea>
+            <p class="hint" id="bio-hint">Maximum 300 characters.</p>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>Notification frequency</legend>
+          <div class="choice"><input id="freq-instant" type="radio" name="frequency" value="instant" checked><label for="freq-instant">Instant</label></div>
+          <div class="choice"><input id="freq-daily" type="radio" name="frequency" value="daily"><label for="freq-daily">Daily digest</label></div>
+          <div class="choice"><input id="freq-weekly" type="radio" name="frequency" value="weekly"><label for="freq-weekly">Weekly digest</label></div>
+        </fieldset>
+
+        <fieldset>
+          <legend>Notify me about</legend>
+          <div class="choice"><input id="n-reports" type="checkbox" name="notify" value="reports" checked><label for="n-reports">New reports</label></div>
+          <div class="choice"><input id="n-users" type="checkbox" name="notify" value="users"><label for="n-users">User changes</label></div>
+          <div class="choice"><input id="n-security" type="checkbox" name="notify" value="security"><label for="n-security">Security alerts</label></div>
+        </fieldset>
+
+        <fieldset>
+          <legend>Display</legend>
+          <div class="field">
+            <label for="page-size">Rows per page</label>
+            <input id="page-size" name="page_size" type="range" min="10" max="100" step="5" value="25" aria-describedby="page-size-val">
+            <p class="hint" id="page-size-val">Current value: <output id="page-size-out" for="page-size">25</output></p>
+          </div>
+        </fieldset>
+
+        <div class="choice">
+          <input id="terms" type="checkbox" name="terms" required aria-describedby="terms-err">
+          <label for="terms">I agree to the acceptable use policy <span class="required" aria-hidden="true">*</span></label>
+        </div>
+        <p class="error" id="terms-err" hidden></p>
+
+        <div class="form-actions">
+          <button type="submit" class="primary">Save settings</button>
+          <button type="reset">Reset</button>
+        </div>
+      </form>
+    </main>
+  </div>
+  <!-- @include footer -->
+  <script src="js/app.js"></script>
+</body>
+</html>

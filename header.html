@@ -1,0 +1,23 @@
+<a class="skip-link" href="#main-content">Skip to main content</a>
+<header class="site-header">
+  <div class="brand">
+    <button type="button" class="menu-toggle" aria-controls="sidebar" aria-expanded="false">
+      <span class="visually-hidden">Toggle navigation menu</span>
+      <span aria-hidden="true">&#9776;</span>
+    </button>
+    <a class="brand-link" href="index.html">Northwind Admin</a>
+  </div>
+  <nav class="top-nav" aria-label="Top navigation">
+    <ul>
+      <li><a href="settings.html"{{current:settings}}>Settings</a></li>
+      <li><a href="#help-footer">Help</a></li>
+      <li><a class="cart-link" href="shop.html#cart">Cart (<span data-cart-count>0</span>)</a></li>
+    </ul>
+  </nav>
+  <button type="button" class="theme-toggle" aria-pressed="false">Dark mode</button>
+  <form class="search-form" role="search" action="users.html" method="get">
+    <label for="site-search" class="visually-hidden">Search the dashboard</label>
+    <input id="site-search" name="q" type="search" placeholder="Search users…" autocomplete="off">
+    <button type="submit">Search</button>
+  </form>
+</header>

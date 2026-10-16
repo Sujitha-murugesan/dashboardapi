@@ -1,0 +1,19 @@
+{
+  "name": "dashboard-api-client",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build.js",
+    "validate": "node scripts/validate.js",
+    "serve": "http-server . -p 8080 -c-1",
+    "screenshots": "node scripts/screenshots.mjs",
+    "test": "node --test test/*.test.js",
+    "e2e": "node scripts/e2e.mjs"
+  },
+  "devDependencies": {
+    "vnu-jar": "^26.10.12",
+    "playwright": "1.56.0",
+    "http-server": "^14.1.1"
+  }
+}
